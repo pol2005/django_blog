@@ -1,0 +1,22 @@
+<div class="c5ab-col-base c5ab-col-lg-3 c5ab-col-md-6 c5ab-col-sm-12">
+        <div class=
+        "c5ab-widget widget_title-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE"
+        id="c5ab-widget-oHzbEhOuNB">
+            <h3 class="c5ab-title-LBWUZ normal title clearfix"><span class=
+            "text-wrap"><span class="icon fa fa-globe"></span><span class=
+            "text">Τελευταία Άρθρα</span></span></h3>
+        </div>
+        <div class=
+        "c5ab-widget widget_posts-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE"
+        id="c5ab-widget-WdrfPY">
+            <div class="c5ab_posts_titles c5ab_posts_titles_xBDiM">
+                {% for post in footer1 %}
+                <article class=
+                "c5ab_post_thumb element c5ab_posts_thumb_titles_single clearfix">
+                <span class="fa fa-arrow-circle-o-right"></span><a href=
+                "{{ post.get_absolute_url }}">{{ post.title }}</a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>

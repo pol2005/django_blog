@@ -1,0 +1,82 @@
+<div id="header-top-bar" class="clearfix dark-mode">
+    <div class="c5-main-width c5-main-width-1170 clearfix">
+        <div class="c5-left">
+            <nav role="navigation" class="navigation-shortcode responsive-on dark-mode mini top-menu-nav clearfix">
+                <div class="responsive-controller clearfix"><span class="menu-enable fa fa-align-justify"></span>
+                </div>
+            <ul id="menu-top-menu-1" class=" top-nav menu-sc-nav clearfix">
+                {% if user.is_authenticated %}
+				<li id="menu-item-credentials" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" class=""><span class=" "></span><span>Γειά σας {{request.user.username}} </a>
+                    </li>
+               <li id="menu-item-credentials" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="{% url "bet:logout" %}" class="fa fa-sign-out "><span class=" "></span><span>Έξοδος</span></a>
+                    </li>
+                    {% else %}
+                    <li id="menu-item-credentials" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#" data-toggle="modal" data-target="#loginModal" class="fa fa-sign-in "><span class=" "></span><span>Είσοδος Χρήστη</span></a>
+                    </li>
+               <li id="menu-item-credentials" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#" data-toggle="modal" data-target="#registerModal"  class=" fa fa-user-plus"><span class=" "></span><span>Εγγραφή Χρήστη</span></a>
+                    </li>
+                    {% endif %}
+                    <li id="menu-item-6248" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{% url "bet:bonus" %}" class=" "><span class=" "></span><span>Κορυφαίες Εταιρείες με Επιβράβευση</span></a>
+                    </li>
+                    <li id="menu-item-6205" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{% url "bet:contact" %}" class=" "><span class=" "></span><span>Επικοινωνία</span></a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="c5-right">
+            <div class="c5ab_social_icons clearfix">
+                <div class="single_social_icon">
+                    <a class=" fa fa-facebook" href="https://www.facebook.com/betvision.gr/" target="_blank" title="Facebook"></a>
+                </div>
+                <div class="single_social_icon">
+                    <a class=" fa fa-twitter" href="https://twitter.com/betvisiongr" target="_blank" title="Twitter"></a>
+                </div>
+               {% comment %} <div class="single_social_icon dropdown">
+                    <a class="fa fa-search" data-toggle="dropdown" href="#" title="Search"></a>
+                    <div class="dropdown-menu">
+                        <div id="c5ab_widget_search" class="clearfix">
+                            <form role="search" method="get" id="c5_searchform" action="https://demo.code125.com/alyoum-1/">
+                                <input type="text" value="" name="s" id="c5ab_search_field" placeholder="Search Your website ..." />
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="single_social_icon dropdown">
+                    <a class="fa fa-user" data-toggle="dropdown" href="#" title="Account"></a>
+                    <div class="dropdown-menu">
+                        <form name="loginform" class="c5_loginform" action="https://demo.code125.com/alyoum-1/wp-login.php" method="post" class=" clearfix">
+                            <div class="input-wrap">
+                                <input type="text" name="log" class="element-block" id="user_login" class="input" placeholder="Username" size="20" /><span class="fa fa-user"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="input-wrap">
+                                <input type="password" name="pwd" class="element-block" id="user_pass" class="input" placeholder="******" size="20" /><span class="fa fa-lock"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p class="login-remember">
+                                        <label for="rememberme">
+                                            <input name="rememberme" type="checkbox" id="rememberme" value="forever">Remember me ?</label>
+                                    </p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="submit" name="wp-submit" id="c5-login-submit" class="button-primary " value="Login in">
+                                </div>
+                            </div>
+                            <p class="login-submit"><a class="c5_forget_password" href="https://demo.code125.com/wp-login.php?action=lostpassword&redirect_to=https://demo.code125.com/alyoum-1">Forget Password ?</a><a class="c5_register" href="https://demo.code125.com/alyoum-1/wp-login.php?action=register">Register</a>
+                                <input type="hidden" name="redirect_to" value="https://demo.code125.com/alyoum-1">
+                            </p>
+                        </form>
+                    </div>
+                </div>{% endcomment %}
+                <div class="single_social_icon">
+                    <a class=" fa fa-envelope-o" href="mailto:betvisionsports@gmail.com" title="Email Us"></a>
+                </div>
+            </div>
+        </div>
+    {% comment %}<a id="grsl" href="#" target="_blank" style="width: 320px; left: -320px; height: 720px; background-image: url(/media/images/skin-gazzetta_left_320x700.jpg); top: 45px; position: absolute;"></a>
+   <a id="grsr" href="#" target="_blank" style="width: 320px; right: -320px;height: 720px; background-image: url(/media/images/skin-gazzetta_right_320x700.jpg); top: 45px; position: absolute;"></a>{% endcomment %}
+    </div>
+</div>

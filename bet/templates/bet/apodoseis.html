@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}Πτώση αποδόσεων{% endblock %}
+{% block content %}
+<div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">{{ tag.name }}</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Πτώση Αποδόσεων</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+<div><iframe scrolling="auto" src="http://www.oddscheck.net/f_dropping.php" frameborder="0" height="1200" width="600px"></iframe></div>
+{% endblock %}

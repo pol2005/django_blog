@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}Asian Handicap{% endblock %}
+{% block content %}
+<div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">{{ tag.name }}</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Asian Hnadicap</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+<div><iframe id="asian" name="asian" scrolling="no" src="http://www.infobeto.com/tools/asiancalcp.php?bgcolor=d63737&amp;fcolor=0a0606" frameborder="0" height="600px" width="500px"></iframe><p><a href="http://www.infobeto.com" target="_blank" title="Στοίχημα">powered by infobeto.com</a></p></div>
+{% endblock %}

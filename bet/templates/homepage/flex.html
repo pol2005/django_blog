@@ -1,0 +1,49 @@
+{% load thumbnail %}
+
+<div id="c5ab-section-lSgetf" class="c5ab-light-mode c5ab-section-common c5ab-align-left c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE   clearfix">
+
+							<div class="c5ab-center-content" style="max-width:1170px">
+
+		<div class="c5ab-row clearfix" id="c5ab-row-lSgetf">
+				<div class="c5ab-col-base c5ab-col-lg-12 c5ab-col-md-12 c5ab-col-sm-12 ">
+		<div class="c5ab-widget widget_posts-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE" id="c5ab-widget-vrthKx"><div class="c5ab_posts_slider  c5ab_posts_slider_gZsbd"><div class="flex-viewport" style="overflow: hidden; position: relative;">
+
+            <ul class="c5ab_slides clearfix" style="width: 1400%; -webkit-transition: 0.6s; transition: 0.6s; transform: translate3d(-3250px, 0px, 0px);">
+                {% for post in flex %}
+
+                <li id="c5-slide" class="clone" aria-hidden="true" style="width: 650px; float: left; display: block;"><div class="c5-post-flex-{{ post.id }} c5-post-thumb"><style>.c5-post-flex-{{ post.id }}{background-image:url('{% thumbnail post.image 650x400 %}');min-height:400px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-flex-{{ post.id }}{background-image:url('{% thumbnail post.image 650x400 %}');}}</style></div><div class="content "><h3 class=""><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><div class="slide_rest  clearfix"><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post.created }}"><span class="fa fa-calendar-o"></span>{{ post.created }}</time></li></ul><div class="clearfix"></div><p class="c5-excerpt">{{ post.body|safe|truncatewords:20 }}</p><div class="clearfix"></div><a href="{{ post.get_absolute_url }}" target="_self" class="has_icon  c5btn c5btn-foAgt right"><span class="text">Περισσότερα</span><span class="icon fa fa-angle-right"></span></a><div class="clearfix"></div><style>
+		.c5btn.c5btn-foAgt .text, .c5btn.c5btn-foAgt .icon{
+			padding: 10px 13px;
+			font-size:12px;
+			font-weight:300;
+		}
+		.c5btn.c5btn-foAgt .text, .c5btn.c5btn-foAgt:hover .icon{
+			background:#f6f6f6;
+			border: 1px solid #dddddd;
+			color: #1f1f1f;
+
+
+		}
+		.c5btn.c5btn-foAgt:hover .text, .c5btn.c5btn-foAgt .icon{
+			background:#b5a929;
+			border: 1px solid #a39825;
+			color: #f6f6f6
+		}
+		</style></div></div><div class="content-rest"></div></li>
+                 {% endfor %}
+            </ul></div>
+
+
+        </div></div>		</div>
+				</div>
+
+						</div>
+
+			</div>
+

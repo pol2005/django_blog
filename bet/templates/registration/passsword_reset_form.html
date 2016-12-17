@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+   {% block title %}Ανάκτηση κωδικού{% endblock %}
+   {% block content %}
+     <h1>Ξεχάσατε τον κωδικό σας?</h1>
+     <p>Εισάγετε το email σας στην παρακάτω φόρμα για νακάνετε ανάκτηση του κωδικού σας.</p>
+     <form action="." method="post" class="c5_loginform">
+     <div class="input-wrap">
+       {{ form.as_p }}
+         </div>
+       <p><input type="submit" value="Αποστολή e-mail" id="c5-login-submit"></p>
+       {% csrf_token %}
+     <div class="clearfix"></div>
+     </form>
+   {% endblock %}

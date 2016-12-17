@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+   {% block title %}Είσοδος χρήστη{% endblock %}
+   {% block breadcumb %}
+<div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">Είσοδος χρήστη</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Είσοδος χρήστη</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+{% endblock %}
+{% block content %}
+       {% if form.errors %}
+           <div class="alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Προσοχή!</strong> Λάθος όνομα χρήστη ή κωδικός πρόβασης.
+        </div>
+       {% endif %}
+       {% if user.is_authenticated %}
+       <p>Έχετε ηδη κανει login</p>
+       {% else %}
+
+<div class="c5-login-required">
+
+
+
+<form action="." method="post" class="c5_loginform">
+
+    {% csrf_token %}
+    <div class="input-wrap">
+       {{ form.username }}  {{form.username.errors}}
+            <span class="fa fa-user"></span>
+       </div>
+          <div class="clearfix"></div>
+           <div class="input-wrap">
+       {{ form.password }} {{form.password.errors}}
+               <span class="fa fa-lock"></span>
+       </div>
+<div class="row">
+    <div class="col-xs-6"></div>
+<div class="col-xs-6"><input type="submit" name="wp-submit" id="c5-login-submit" class="button-primary " value="Είσοδος"></div>
+    </div>
+<p class="login-submit"><a class="c5_forget_password" href="{% url "bet:password_reset" %}">Ξεχάσατε το συνθηματικό?</a><a class="c5_register" href="{% url "bet:register" %}">Εγγραφή</a></p>
+               <div class="clearfix"></div>
+
+  </form>
+  </div>
+       {% comment %}<form name="loginform" class="c5_loginform" action="." method="post">
+           <div class="input-wrap"><input type="text" name="log" class="element-block" id="id_username" placeholder="Username" size="20">
+               <span class="fa fa-user"></span>
+           </div>
+           <div class="clearfix"></div>
+           <div class="input-wrap">
+               <input type="password" name="pwd" class="element-block" id="id_password" placeholder="******" size="20">
+               <span class="fa fa-lock"></span>
+           </div>
+           {% csrf_token %}
+           <div class="row">
+               <div class="col-xs-6"><p class="login-remember"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever">Remember me ?</label></p>
+               </div>
+               <div class="col-xs-6"><input type="submit" name="wp-submit" id="c5-login-submit" class="button-primary " value="Login in">
+               </div>
+           </div><p class="login-submit"><a class="c5_forget_password" href="{% url "bet:password_reset" %}">Ξεχάσατε το συνθηματικό?</a><a class="c5_register" href="{% url "bet:register" %}">Εγγραφή</a></form>
+{% endcomment %}
+{% endif %}
+   {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}Στατιστικά{% endblock %}
+{% block content %}
+<div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">{{ tag.name }}</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Στατιστικά</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+<div><p><iframe src="http://iframe.insports.eu/index.php?inframe=1&amp;row1=%23E4E4E4&amp;row2=%23FFFFFF&amp;color1=%230171AF&amp;color2=%230171AF&amp;color1_bold=0&amp;color2_bold=0&amp;title_bg=%238B8B8B&amp;title_color=%23FFFFFF&amp;title_bold=0&amp;body_bg=%23FFFFFF&amp;table_bg=%23FFFFFF&amp;font=1&amp;fontsize=14px&amp;lang=gr" frameborder="0" height="2000" width="100%"></iframe></p></div>
+{% endblock %}

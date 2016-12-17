@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block title %}Livescore{% endblock %}
+{% block content %}
+<div class="c5ab-widget widget_tabs-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE" id="c5ab-widget-haUFOHzmgz">
+    <div class="custom_tabs_wrap_out c5ab_tabs_wrap">
+    <ul class="custom_tabs custom_tabs_EvBus clearfix">
+        <li class="c5ab_tab_handle current" data-id="FyVWA"><span class="fa fa-futbol-o">Ποδόσφαιρο</span></li>
+        <li class="c5ab_tab_handle" data-id="dyCst"><span class="fa fa-bullseye">Μπάσκετ</span></li>
+        <li class="c5ab_tab_handle" data-id="wTqZY"><span class="fa fa-rocket">Baseball</span></li>
+         <li class="c5ab_tab_handle" data-id="wTqZY"><span class="fa fa-hand-lizard-o">Ice-hockey</span></li>
+    </ul>
+    <div class="custom_tabs_wrap">
+        <div class="custom_tabs_content clearfix pane pane-FyVWA" style="">
+            <script src="http://www.btfscores.com/widgets/tennis-widget-main.min.js" async></script> <div id="tennis-main-goal"></div></div>
+        <div class="custom_tabs_content clearfix pane pane-dyCst" style="display: none;"><iframe src="http://free.scorespro.com/opap-livescore/basketball.php" frameborder="0" height="3000" scrolling="No" width="616" marginheight="0" marginwidth="0">></iframe></div>
+                <div class="custom_tabs_content clearfix pane pane-wTqZY" style="display: none;"><iframe src="http://free.scorespro.com/opap-livescore/baseball.php" frameborder="0" height="3000" scrolling="No" width="616" marginheight="0" marginwidth="0">></iframe></div>
+
+        <div class="custom_tabs_content clearfix pane pane-wTqZY" style="display: none;"><iframe src="http://free.scorespro.com/opap-livescore/ice-hockey.php" frameborder="0" height="3000" scrolling="No" width="616" marginheight="0" marginwidth="0">></iframe></div>
+    </div>
+</div>
+</div>
+{%  endblock %}
+{% block domready %}
+    $(document).on("click", ".c5ab_tab_handle", function c5ab_tab_handle (e) {
+	 	$(this).closest('.c5ab_tabs_wrap').find('.c5ab_tab_handle').removeClass('current');
+	 	$(this).closest('.c5ab_tabs_wrap').find('.pane').css('display','none');
+	 	$(this).addClass('current');
+	 	$('.pane-' + $(this).attr('data-id')).fadeIn();
+
+	 });
+{% endblock %}

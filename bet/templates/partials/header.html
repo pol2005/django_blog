@@ -1,0 +1,28 @@
+{% load bet_tags %}
+{% load staticfiles %}
+<header class="header " role="banner">
+
+    <div id="inner-header" class=" clearfix">
+        <div class="c5-logo-wrap clearfix">
+            <div class="c5-left">
+                <a class="clearfix c5-orignial-logo c5-logo c5-bottom-30" style="margin-top:15px" href="{% url "bet:index" %}" rel="nofollow"><img alt="Logo" src="{% static 'images/logo.png' %}" srcset="{% static 'images/logo.png' %} 1x, {% static 'images/logo.png' %} 2x" />
+                </a> <span class="fa fa-bars c5-mobile-sidebar"></span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="c5-right">
+                <div class="c5ab_ads c5ab-desktop-on  c5ab-tablet-off  c5ab-mobile-off ads_728x90">
+                    {% ad_top %}
+                </div>
+                <style>
+                    .ads_728x90 {
+                        display: block;
+                        margin: 0px auto 30px;
+                        width: 728px;
+                        height: 90px;
+                    }
+                </style>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</header>

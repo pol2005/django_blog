@@ -1,0 +1,33 @@
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Είσοδος Χρήστη</h4>
+      </div>
+        <form action="/login/" method="post" class="c5_loginform">
+      <div class="modal-body">
+         {% csrf_token %}
+        <div class="input-wrap">
+       {{ form.username }}  {{form.username.errors}}
+            <span class="fa fa-user"></span>
+       </div>
+          <div class="clearfix"></div>
+           <div class="input-wrap">
+       {{ form.password }} {{form.password.errors}}
+               <span class="fa fa-lock"></span>
+       </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+    <div class="col-xs-6"><p class="login-submit"><a class="c5_forget_password" href="{% url "bet:password_reset" %}">Ξεχάσατε το συνθηματικό?</a><a class="c5_register" href="{% url "bet:register" %}">Εγγραφή</a></p>
+</div>
+<div class="col-xs-6"><input type="submit" name="wp-submit" id="c5-login-submit" class="button-primary " value="Είσοδος"></div>
+    </div>
+               <div class="clearfix"></div>
+      </div>
+            </form>
+    </div>
+  </div>
+</div>

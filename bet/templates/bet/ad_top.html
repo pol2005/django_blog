@@ -1,0 +1,5 @@
+{% if blockpano %}
+    {% for block in blockpano %}
+        {{ block.body|safe }}
+{% endfor %}
+{% endif %}

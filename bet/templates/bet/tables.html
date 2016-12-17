@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}Βαθμολογίες{% endblock %}
+{% block content %}
+    <div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">Βαθμολογίες</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Βαθμολογίες</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+   <h1 class="entry-title single-title" itemprop="headline">{{ post.title }}</h1>
+<iframe src="http://www.btfstats.com/widgets/leagues-table.php?name=Greece%3ASuper+League&type=1"
+width="100%" height="900px" scrolling="no" frameBorder="0" ></iframe>
+{%  endblock %}
+{% block domready %}
+    $(document).on("click", ".c5ab_tab_handle", function c5ab_tab_handle (e) {
+	 	$(this).closest('.c5ab_tabs_wrap').find('.c5ab_tab_handle').removeClass('current');
+	 	$(this).closest('.c5ab_tabs_wrap').find('.pane').css('display','none');
+	 	$(this).addClass('current');
+	 	$('.pane-' + $(this).attr('data-id')).fadeIn();
+
+	 });
+{% endblock %}

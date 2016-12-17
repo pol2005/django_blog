@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% load bet_tags %}
+{% load thumbnail %}
+   {% block title %}Άρθρα στην κατηγορία {{ tag.name }}{% endblock %}
+
+   {% block content %}
+
+
+
+<article id="post" class="clearfix post page type-page status-publish hentry" role="article">
+					                <section class="entry-content clearfix">
+	                    		<style>
+			#c5ab-row-kpkPyF,
+			#c5ab-row-kpkPyF .c5ab-row{
+				margin-left:-15px;
+				margin-right:-15px;
+			}
+
+			#c5ab-row-kpkPyF .c5ab-col-base{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			#c5ab-section-kpkPyF{
+				margin: auto auto auto auto ;
+				padding: auto auto auto auto ;
+			}
+
+		</style>
+
+
+			<div id="c5ab-section-kpkPyF" class="c5ab-light-mode c5ab-section-common c5ab-align-left c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE   clearfix">
+
+							<div class="c5ab-center-content" style="max-width:1170px">
+
+		<div class="c5ab-row clearfix" id="c5ab-row-kpkPyF">
+				<div class="c5ab-col-base c5ab-col-lg-12 c5ab-col-md-12 c5ab-col-sm-12 ">
+		<div class="c5ab-widget widget_posts-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE" id="c5ab-widget-oFTSnO">
+      <div class="c5ab_posts_blog_2  c5ab_posts_blog_2_MppZN">
+
+{% for post in posts %}
+
+    <article class="c5ab_post_thumb c5ab_posts_thumb_blog_1_single category-4 clearfix">
+        <div class="row">
+            <div class="col-sm-4"><div class="c5-thumb-hover  clearfix"><div class="hover"><div class="half"><a href="{{ post.get_absolute_url }}" class="fa fa-link"></a></div></div><a href="{{ post.get_absolute_url }}"><div class="c5-post-{{ post.id }} c5-post-thumb"><style>.c5-post-{{ post.id }}{background-image:url('{% thumbnail post.image 197x197 %}');min-height:197px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ post.id }}{background-image:url('{% thumbnail post.image 394x394 %}');}}</style></div></a></div></div><div class="col-sm-8">
+            <h3 class=""><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post.created }}"><span class="fa fa-calendar-o"></span>{{ post.created }}</time></li></ul><div class="content "><div class="clearfix"></div><p class="c5-excerpt"> {{ post.body|safe|truncatewords:40 }} </p></div></div></div>
+</article>
+         {% endfor %}
+            <div class="clearfix"></div>
+<nav class="c5-pagination">
+{% include "bet/pagination.html" with page=posts %}
+</nav>
+
+        </div>
+          </div>
+          </div>
+          </div>
+
+          </div>
+
+			</div>
+          </section>
+          </article>
+
+
+
+
+
+
+   {% endblock %}

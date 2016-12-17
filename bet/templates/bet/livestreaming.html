@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}LiveStreaming{% endblock %}
+{% block content %}
+<div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">{{ tag.name }}</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Live Streaming</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+<div><iframe scrolling="no" src="http://www.livefootball.gr/widget/stream-widget.php?height=800&amp;color=EBE5EB&amp;textcolor=000000&amp;language=el" style="overflow:hidden;background:#fff;" frameborder="0" height="800" width="600"></iframe></div>
+{% endblock %}

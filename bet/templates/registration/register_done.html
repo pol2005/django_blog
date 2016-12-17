@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+   {% block title %}Επιτυχής εγγραφή{% endblock %}
+   {% block content %}
+     <h1>Καλώς ήλθατε {{ new_user.first_name }}!</h1>
+     <p>Ο λογαριασμός σας έχει δημιουργηθεί.Για να εισέλθετε, πατήστε <a
+   href="{% url "bet:login" %}">εδώ</a>.</p>
+   {% endblock %}

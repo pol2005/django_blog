@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% load bet_tags %}
+{% load thumbnail %}
+{% load staticfiles %}
+   {% block title %}{% for tag in post.tags.all %}{{ tag.name }} |{% endfor %}{{ post.title }}{% endblock %}
+   {% block content %}
+     <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-579240e8e6c6261b"></script>
+
+
+                    <article id="post-4795" class="clearfix post-4795 post type-post status-publish format-standard has-post-thumbnail hentry category-review category-social tag-adipiscing tag-amet tag-android tag-consectetur tag-css3 tag-dolor tag-google tag-great tag-html5 tag-ipsum tag-jquery tag-lorem tag-responsive tag-seo tag-shahrzad tag-sit tag-theme" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">
+                        <header class="article-header">
+
+                <h1 class="entry-title single-title" itemprop="headline">{{ post.title }}</h1>
+                <div class="row"><div class="col-sm-6"><div class="c5-author-meta-wrap"><div class="c5-author-img"><img alt="&lt;span class=&quot;fa fa-user&quot;&gt;&lt;/span&gt;" src="{% static 'images/article.jpg' %}" srcset="{% static 'images/article.jpg' %} 2x" class="avatar avatar-200 photo" height="200" width="200"></div>
+                    <div class="c5-author-data"><a class="url fn" href="http://betvision.gr">Betvision</a>
+                        <div class="">
+                        <a href="https://twitter.com/betvisiongr" class="twitter-follow-button" data-show-count="false">Follow @betvisiongr</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/el_GR/sdk.js#xfbml=1&version=v2.7&appId=114634571961506";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+                    </div><div class="float_left_fb">
+                    <div class="fb-like" data-href="https://web.facebook.com/betvision.gr/?fref=ts" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                    </div></div></div></div><div class="col-sm-6"><div class="c5-author-meta-wrap"><div class="c5-author-img">
+<img alt="" class="fa fa-user" src="{% static 'images/article1.jpg' %}" srcset="{% static 'images/article1.jpg' %} 2x" class="avatar avatar-200 photo" height="200" width="200">
+</div><div class="c5-author-data"><time class="value updated" datetime="{{ post.created }}"><span class="fa fa-calendar-o"></span>{{ post.created }}</time><div class="clearfix"></div><div class="clearfix"></div>
+                    <br><b>Share:</b><br> <div class="addthis_sharing_toolbox"></div><div class="clearfix"></div></div></div></div>
+                    </div>
+                          {% comment %} {% if 'kazino' not in show_image and 'poker' not in show_image  %}
+                            <div class="c5-thumb-hover  clearfix" style="min-height:250px"><div class="c5-post-chfbq c5-post-thumb"><style>.c5-post-chfbq{background-image:url('{% thumbnail post.image 650x250  %}');min-height:250px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-chfbq{background-image:url('{% thumbnail post.image 650x250 crop %}');}}</style></div></div>
+                            {% endif %}{% endcomment %}
+                            <div style="min-height:30px"></div>
+
+                                      </header>
+
+
+            <section class="entry-content c5-article-content clearfix" itemprop="articleBody">
+                {{ post.body|safe }}
+                </section>
+
+                <footer class="article-footer">
+                                      <div class="c5-tags-wrap clearfix"> <h3 class=" c5ab-title-VyjZH   normal title  clearfix"><span class="text-wrap"><span class="icon fa fa-tag"></span><span class="text ">Κατηγορίες</span></span></h3>
+                    <div class="tags-meta tags clearfix">
+                        {% for tag in post.tags.all %}
+                        <a href="{% url "bet:post_list_by_tag" tag.slug %}" rel="tag">{{ tag.name }}</a>
+                        {% endfor %}
+                        <div class="clearfix"></div></div>
+                    </div>
+
+                    <div class="c5-related-wrap clearfix">
+                        <h3 class=" c5ab-title-zQSlN   normal title  clearfix"><span class="text-wrap"><span class="icon fa fa-tags"></span><span class="text ">Περισσότερα Άρθρα</span></span></h3>
+
+                        <div class="row">
+                             {% for post in similar_posts %}
+                            <div class="col-sm-4"><article class=" c5ab_posts_thumb_boxes_single clearfix"><div class="c5-boxes-thumb-hover  clearfix"><div class="c5-post-{{ post.id }} }} c5-post-thumb"><style>.c5-post-{{ post.id }}{background-image:url('{% thumbnail post.image 197x197  %}');min-height:197px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ post.id }} {background-image:url('{% thumbnail post.image 197x197  %}');}}</style></div></div><div class="box-content "><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></div></article></div>
+                            {% empty %}
+                            No post yet
+                            {% endfor %}
+                           </div>
+
+                    </div>
+
+                </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+            </article>
+
+
+
+
+
+
+   {% endblock %}

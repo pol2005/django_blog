@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+   {% block title %}Δημιουργήστε λογαριασμό{% endblock %}
+   {% block content %}
+{% if user.is_authenticated %}
+       <p>Έχετε ηδη εγγραφεί</p>
+       {% else %}
+     <h1>Δημιουργήστε λογαριασμό</h1>
+
+{% comment %}<form action="." method="post" class="c5_loginform">
+    {% csrf_token %}
+    <div class="input-wrap"><input type="text" name="id_username" class="element-block" id="id_username" placeholder="Username" size="20"><span class="fa fa-user"></span></div>
+    <div class="input-wrap"><input type="text" name="id_first_name" class="element-block" id="id_first_name" placeholder="Name" size="20"><span class="fa fa-user"></span></div>
+    <div class="input-wrap"><input type="text" name="email" class="element-block " id="id_email" placeholder="Your Email" size="20"><span class="fa fa-envelope"></span></div>
+    <div class="input-wrap"><input type="password" name="password" class="element-block" id="id_password" placeholder="******" size="20"><span class="fa fa-lock"></span></div>
+    <div class="input-wrap"><input type="password" name="password2" class="element-block" id="id_password2" placeholder="******" size="20"><span class="fa fa-lock"></span></div>
+    <div class="col-xs-6"><input type="submit" name="wp-submit" id="c5-login-submit" class="button-primary " value="Login in"></div>
+
+  </form>{% endcomment %}
+<form action="." method="post" class="c5_loginform">
+
+    {% csrf_token %}
+    {% for field in user_form %}
+        <div class="input-wrap">
+       {{ field.label_tag }}{{ field }}  {{field.errors}}
+       </div>
+
+   {% endfor %}
+
+<div class="col-xs-6"><input type="submit" name="wp-submit" id="c5-login-submit" class="button-primary " value="Εγγραφή">
+               </div>
+ <div class="clearfix"></div>
+  </form>
+       {% endif %}
+{% endblock %}

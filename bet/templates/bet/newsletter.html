@@ -1,0 +1,16 @@
+{% load bet_tags %}
+{% comment %}<form action="{% url "bet:newsletter" %}/" method="post">
+    <div class="input-wrap">
+        {% csrf_token %}
+       {{ newsletter.as_p }}
+        </div>
+       <p><input id="c5-submit-newsletter" type="submit" value="Subscribe"></p>
+   </form>{% endcomment %}
+
+<form action="/newsletter/" method="post" id="c5-newsletter-form">
+                      {% csrf_token %}
+    <div class="input-wrap">
+{{ newsletter.as_p }}
+        </div>
+        <p><input id="c5-submit-newsletter" type="submit" value="Subscribe"></p>
+   </form>

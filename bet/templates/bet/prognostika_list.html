@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% static "" as BaseUrl %}
+{% block title %}Προγνωστικά ποδοσφαίρου μπάσκετ βόλλευ και τέννις{% endblock %}
+{% block content %}
+    <div id="c5_bread_crumb" class=" c5-single-element c5-breaking-1170-S-C-B">
+                <div class="border">
+                    <div id="title_crumb">
+                        <h1 class="heading1">Προγνωστικά</h1>
+                        <div class="clearfix"></div>
+                        <div id="crumbs"><a href="{% url "bet:index" %}"> <span class="fa fa-home"> </span> </a>  <span class="fa fa-caret-right"> </span>  <span class="current">Προγνωστικά</span></div>                        <div class="arrow_down"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+<div class="table-responsive">
+<table class="table table-bordered">
+   <thead>
+      <tr>
+          <th></th>
+         <th>Κωδικός</th>
+         <th>Ημερ/νία</th>
+         <th>Αγώνας</th>
+         <th>Απόδοση</th>
+          <th>Σημείο</th>
+          <th>Αποτέλεσμα</th>
+          <th>Bookmaker</th>
+      </tr>
+   </thead>
+   <tbody>
+   {% for post in object_list %}
+      <tr class="{{ post.xroma }}">
+         <td><img src="/static/images/{{ post.sport }}.jpg" height="40" width="40" alt="{{ post.sport }}"></td>
+         <td>{{ post.kodikos }}</td>
+         <td>{{ post.date }}</td>
+          <td>{{ post.agonas }}</td>
+          <td>{{ post.apodosi }}</td>
+          <td>{{ post.simeio }}</td>
+          <td>{{ post.apotelesma }}</td>
+         <td><a href="{{ post.bookmaker_link }}" target="_blank" class="btn btn-primary">{{ post.bookmaker_title }}</a>
+         </td>
+      </tr>
+{% endfor %}
+   </tbody>
+</table>
+</div>
+   {% endblock %}

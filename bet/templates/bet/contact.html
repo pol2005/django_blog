@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+   {% block title %}Επικοινωνία{% endblock %}
+   {% block content %}
+       {% if form.errors %}
+           <div class="alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Προσοχή!</strong> Έχετε κάποιο λάθος στην υποβολή της φόρμας σας.
+        </div>
+       {% endif %}
+     {% if sent %}
+       <h1>Το email σας στάλθηκε επιτυχώς.</h1>
+         <p>Ευχαριστούμε που επικοινωνήσατε μαζί μας.</p>
+     {% else %}
+       <h2>Επικοινωνήστε μαζί μας </h2>
+
+         <form id="c5-contact-form" class="clearfix" method="post" action=""><div class="row"><div class="col-md-6">
+             {% csrf_token %}
+    		<div class="input-wrap"><input type="text" name="name" class="element-block" id="id_name" placeholder="Όνομα" size="20"><span class="fa fa-user"></span></div>
+    		</div><div class="col-md-6">
+    		<div class="input-wrap"><input type="text" name="email" class="element-block" id="id_email" placeholder="Email" size="20"><span class="fa fa-envelope"></span></div>
+      </div></div><textarea id="id_comments" placeholder="Το μήνυμά σας ..." name="comments" class="element-block" tabindex="4" aria-required="true"></textarea>
+
+             <input name="submit" type="submit" id="c5-submit-contact" value="Αποστολή">
+             <div class="clearfix"></div>
+         </form>
+     {% endif %}
+
+   {% endblock %}

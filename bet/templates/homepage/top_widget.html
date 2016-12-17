@@ -1,0 +1,31 @@
+{% load thumbnail %}
+
+<div class="c5ab-widget widget_posts-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE" id="c5ab-widget-NUDNQf">
+                        <div class="c5ab_posts_thumb_wide  c5ab_posts_thumb_wide_DHyOw">
+                            <h3 class=" c5ab-title-ALYTd  category-3 normal title  clearfix"><a href="{% url "bet:post_list_by_tag" "news" %}" class="text-wrap"><span class="icon fa fa-globe"></span><span class="text ">Ειδήσεις</span></a></h3>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {% for post1 in top_widget1 %}
+                                    <article class="c5ab_post_thumb c5ab_posts_thumb_tall_single category-3 clearfix"><div class="c5-thumb-hover  clearfix"><div class="c5-post-LZCqb c5-post-thumb"><style>.c5-post-LZCqb{background-image:url('{% thumbnail post1.image 325x218 %}');min-height:218px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-LZCqb{background-image:url('{% thumbnail post1.image 325x218 %}');}}</style></div></div><div class="content "><h3 class=""><a href="{{ post1.get_absolute_url }}">{{ post1.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post1.created }}"><span class="fa fa-calendar-o"></span>{{ post1.created }}</time></li></ul><div class="clearfix"></div><p class="c5-excerpt"> {{ post1.body|safe|truncatewords:20 }}</p></div>
+                                    </article>
+                                    {% endfor %}
+                                </div>
+                                <div class="col-sm-6">
+                                    {% for post2 in top_widget2 %}
+                                <article class="c5ab_post_thumb c5ab_posts_thumb_single category-3 has-thumb clearfix"><div class="c5-thumb-hover clearfix"><div class="c5-post-{{ post2.id }} c5-post-thumb"><style>.c5-post-{{ post2.id }}{background-image:url('{% thumbnail post2.image 100x100 %}');min-height:100px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ post2.id }}{background-image:url('{% thumbnail post2.image 200x200 %}');}}.c5-post-{{ post2.id }}{min-width: 100px;}</style></div></div><div class="content "><h3 class=""><a href="{{ post2.get_absolute_url }}">{{ post2.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post2.created }}"><span class="fa fa-calendar-o"></span>{{ post2.created }}</time></li></ul><div class="clearfix"></div></div>
+                                </article>
+                                    {% endfor %}
+                            </div></div></div></div>
+                          

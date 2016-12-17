@@ -1,0 +1,35 @@
+{% load thumbnail %}
+<div id="posts-widget-4" class="widget c5_al_widget clearfix c5-widget c5-widget-posts-widget "><div class="c5ab_posts_thumb  c5ab_posts_thumb_LlXqB">
+
+    <h3 class=" c5ab-title-qmQaU  normal title  clearfix"><span class="text ">Νόμιμες Στοιχηματικές Εταιρείες</span></h3>
+{% for top in top_block %}
+<article class="c5ab_post_thumb c5ab_posts_thumb_single  has-thumb clearfix" style="min-height: 50px"><div class="c5-thumb-hover clearfix"><div class="hover"><div class="half"><span data-id="649" class="c5-view-article fa fa-eye"></span></div></div><div class="c5-post-HYG-{{ top.id }} c5-post-thumb"><style>.c5-post-HYG-{{ top.id }}{background-image:url('{% thumbnail top.image 100x50 %}');min-height:50px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-HYG-{{ top.id }}{background-image:url('{% thumbnail top.image 200x100 %}');}}.c5-post-HYG-{{ top.id }}{min-width: 100px;}</style></div></div><div class="content "><h3 class=""><a href="{{ top.get_absolute_url }}">{{ top.title }}</a></h3><div class="clearfix"></div></div></article>
+    {% endfor %}
+</div></div>
+<div id="posts-widget-4" class="widget c5_al_widget clearfix c5-widget c5-widget-posts-widget "><div class="c5ab_posts_thumb  c5ab_posts_thumb_LlXqB">
+
+    <h3 class=" c5ab-title-qmQaU  normal title  clearfix"><span class="text ">Μέθοδοι Πληρωμής</span></h3>
+{% for payments in payment %}
+<article class="c5ab_post_thumb c5ab_posts_thumb_single  has-thumb clearfix" style="min-height: 50px"><div class="c5-thumb-hover clearfix"><div class="hover"><div class="half"><span data-id="649" class="c5-view-article fa fa-eye"></span></div></div><div class="c5-post-HYG-{{ payments.id }} c5-post-thumb"><style>.c5-post-HYG-{{ payments.id }}{background-image:url('{% thumbnail payments.image 100x50 %}');min-height:50px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-HYG-{{ payments.id }}{background-image:url('{% thumbnail payments.image 200x100 %}');}}.c5-post-HYG-{{ payments.id }}{min-width: 100px;}</style></div></div><div class="content "><h3 class=""><a href="{{ payments.get_absolute_url }}">{{ payments.title }}</a></h3><div class="clearfix"></div></div></article>
+    {% endfor %}
+</div></div>
+{% for block in blocks %}
+<div id="posts-widget-4" class="widget c5_al_widget clearfix c5-widget c5-widget-posts-widget "><div class="c5ab_posts_thumb  c5ab_posts_thumb_LlXqB">
+    {% if block.titleOn == True %}
+    <h3 class=" c5ab-title-qmQaU  category-6 normal title  clearfix">{{ block.title }}</h3>
+    {% endif %}
+{{ block.body|safe }}
+</div></div>
+{% endfor %}

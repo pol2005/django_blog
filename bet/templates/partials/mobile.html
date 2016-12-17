@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<div class="c5-mobile-hidden-wrap">
+    <span class="fa fa-close c5-close-mobile-sidebar"></span>
+    <div class="c5-mobile-logo">
+        <a class="clearfix c5-orignial-logo c5-logo c5-bottom-30" style="margin-top:15px" href="{% url "bet:index" %}" rel="nofollow"><img alt="Logo" src="{% static 'images/logo.png' %}" srcset="{% static 'images/logo.png' %} 1x, {% static 'images/logo.png' %} 2x" />
+        </a>
+    </div>
+    <div class="c5-mobile-main-menu">
+        <nav role="navigation" class="navigation-shortcode responsive-off light default top-menu-nav clearfix">
+            <div class="responsive-controller clearfix"><span class="menu-enable fa fa-align-justify"></span>
+            </div>
+
+            <ul id="menu-sidebar" class=" top-nav menu-sc-nav clearfix">
+
+                        <li id="menu-item-6299" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:prognostika-list" %}" class=" "><span class=" "></span><span>ΠΡΟΓΝΩΣΤΙΚΑ</span></a>
+                        </li>
+                        
+
+                <li id="menu-item-6212" class="menu-item menu-item-type-taxonomy menu-item-object-category category-7"><a href="{% url "bet:kouponi"  %}" class=" "><span class=" "></span><span>ΚΟΥΠΟΝΙ</span></a>
+                </li>
+
+                        <li id="menu-item-6299" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:post_list_by_tag" "analyseis-podosfairoy" %}" class=" "><span class=" "></span><span>ΑΝΑΛΥΣΕΙΣ ΠΟΔΟΣΦΑΙΡΟΥ</span></a>
+                        </li>
+                        <li id="menu-item-6268" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:post_list_by_tag" "analyseis-mpasket" %}" class=" "><span class=" "></span><span>ΑΝΑΛΥΣΕΙΣ ΜΠΑΣΚΕΤ</span></a>
+                        </li>
+                        <li id="menu-item-6265" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:post_list_by_tag" "analyseis-tenis" %}" class=" "><span class=" "></span><span>ΑΝΑΛΥΣΕΙΣ ΤΕΝΝΙΣ</span></a>
+                        </li>
+                        <li id="menu-item-6264" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:post_list_by_tag" "analyseis-bolley" %}" class=" "><span class=" "></span><span>ΑΝΑΛΥΣΕΙΣ ΒΟΛΛΕΥ</span></a>
+
+                </li>
+                <li id="menu-item-6228" class="menu-item menu-item-type-taxonomy menu-item-object-category category-4"><a href="{% url "bet:tables" %}" class=" "><span class=" "></span><span>ΒΑΘΜΟΛΟΓΙΕΣ</span></a>
+                </li>
+                <li id="menu-item-6209" class="menu-item menu-item-type-taxonomy menu-item-object-category category-3"><a href="{% url "bet:livescore" %}" class=" "><span class=" "></span><span>LIVESCORE</span></a>
+                </li>
+                <li id="menu-item-6208" class="menu-item menu-item-type-taxonomy menu-item-object-category category-2"><a href="{% url "bet:post_list_by_tag" "news" %}" class=" "><span class=" "></span><span>ΕΙΔΗΣΕΙΣ</span></a>
+                </li>
+                <li id="menu-item-6224" class="menu-item menu-item-type-taxonomy menu-item-object-category category-8"><a href="{% url "bet:post_list_by_tag" "stoixhmatikh-8ewria" %}" class=" "><span class=" "></span><span>ΣΤΟΙΧΗΜΑΤΙΚΗ ΘΕΩΡΙΑ</span></a>
+                </li>
+                <li id="menu-item-6210" class="menu-item menu-item-type-taxonomy menu-item-object-category category-5"><a href="{% url "bet:post_list_by_tag" "nomo8esia" %}" class=" "><span class=" "></span><span>ΝΟΜΟΘΕΣΙΑ</span></a>
+                </li>
+
+
+                        <li id="menu-item-6299" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:apodoseis" %}" class=" "><span class=" "></span><span>ΠΤΩΣΗ ΑΠΟΔΟΣΕΩΝ</span></a>
+                        </li>
+                        <li id="menu-item-6268" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url  "bet:tziroi" %}" class=" "><span class=" "></span><span>ΤΖΙΡΟΙ</span></a>
+                        </li>
+                        <li id="menu-item-6265" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:livestreaming"  %}" class=" "><span class=" "></span><span>LIVE STREAMING</span></a>
+                        </li>
+                        <li id="menu-item-6264" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:statistika"  %}" class=" "><span class=" "></span><span>ΣΤΑΤΙΣΤΙΚΑ</span></a>
+                        </li>
+                        <li id="menu-item-6264" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{% url "bet:asianhandicap"  %}" class=" "><span class=" "></span><span>ASIAN HANDICAP</span></a>
+                        </li>
+
+
+            </ul>
+        </nav>
+    </div>
+
+    {% include "partials/sidebar-right-mobile.html" %} {% include "partials/sidebar-left-mobile.html" %}
+</div>

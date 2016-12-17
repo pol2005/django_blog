@@ -1,0 +1,35 @@
+{% load thumbnail %}
+<h3 class=" c5ab-title-yaZcL   normal title  clearfix"><span class="text-wrap"><span class="text ">Καζίνο</span></span></h3>
+<div class="c5ab_posts_boxes-plain c5ab_posts_boxes-plain_qvSpz">
+    {% for kazinos in kazino %}
+<article class=" c5ab_posts_thumb_boxes_single  clearfix"><div class="c5-boxes-thumb-hover  clearfix">
+    <div class="c5-post-{{ kazinos.id }} c5-post-thumb"><style>.c5-post-{{ kazinos.id }}{background-image:url('{% thumbnail kazinos.image 160x160 %}');min-height:160px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ kazinos.id }}{background-image:url('{% thumbnail kazinos.image 320x320 %}');}}</style></div></div><div class="box-content "><a href="{{ kazinos.get_absolute_url }}">{{ kazinos.title }}</a></div></article>
+{% endfor %}
+</div>
+<h3 class=" c5ab-title-yaZcL   normal title  clearfix"><span class="text-wrap"><span class="text ">Πόκερ</span></span></h3>
+<div class="c5ab_posts_boxes-plain c5ab_posts_boxes-plain_qvSpz">
+    {% for pokers in poker %}
+<article class=" c5ab_posts_thumb_boxes_single clearfix"><div class="c5-boxes-thumb-hover  clearfix">
+    <div class="c5-post-{{ pokers.id }} c5-post-thumb"><style>.c5-post-{{ pokers.id }}{background-image:url('{% thumbnail pokers.image 160x160 %}');min-height:160px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ pokers.id }}{background-image:url('{% thumbnail pokers.image 320x320 %}');}}</style></div></div><div class="box-content "><a href="{{ pokers.get_absolute_url }}">{{ pokers.title }}</a></div></article>
+{% endfor %}
+</div>
+{% for block in blocks %}
+<div id="posts-widget-{{ block.id }}" class="widget c5_al_widget clearfix c5-widget c5-widget-posts-widget "><div class="c5ab_widget ">
+    {% if block.titleOn == True %}
+    <h3 class=" c5ab-title-{{ block.id }}   normal title  clearfix">{{ block.title }}</h3>
+    {% endif %}
+{{ block.body|safe }}
+</div></div>
+{% endfor %}

@@ -1,0 +1,67 @@
+{% load thumbnail %}
+
+<div class="c5ab-widget widget_posts-widget c5ab-desktop-TRUE c5ab-tablet-TRUE c5ab-mobile-TRUE" id="c5ab-widget-YfhBUQ">
+    <div class="c5ab_posts_thumb_wide_wide  c5ab_posts_thumb_wide_wide_XcHeC">
+    <h3 class=" c5ab-title-dcYww   normal title category-5  clearfix"><a href="{% url "bet:post_list_by_tag" "analyseis-podosfairoy" %}" class="text-wrap"><span class="icon fa fa-star"></span><span class="text ">Αναλύσεις Ποδοσφαίρου</span></a></h3>
+    {% for post in middle_widget1 %}
+    <article class="c5ab_post_thumb c5ab_posts_thumb_tall_single  clearfix"><div class="row"><div class="col-sm-6"><div class="c5-thumb-hover  clearfix"><div class="hover"><div class="half"><a href="{{ post.get_absolute_url }}" class="fa fa-link"></a></div></div><div class="c5-post-kBeOe c5-post-thumb"><style>.c5-post-kBeOe{background-image:url('{% thumbnail post.image 325x195  %}');min-height:195px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-kBeOe{background-image:url('{% thumbnail post.image 325x195  %}');}}</style></div></div></div><div class="col-sm-6"><div class="content "><h3 class=""><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post.created }}"><span class="fa fa-calendar-o"></span>{{ post.created }}</time></li></ul><div class="clearfix"></div><p class="c5-excerpt">{{ post.body|safe|truncatewords:20 }} </p></div></div></div>
+    </article>
+    {% endfor %}
+    <div class="row">
+        {% for post2 in middle_widget2 %}
+        <div class="col-sm-6">
+        <article class="c5ab_post_thumb c5ab_posts_thumb_single category-4 has-thumb clearfix">
+            <div class="c5-thumb-hover clearfix">
+                <div class="hover"><div class="half"><a href="{{ post2.get_absolute_url }}" class="fa fa-link"></a></div></div>
+                <div class="c5-post-{{ post2.id }} c5-post-thumb"><style>.c5-post-{{ post2.id }}{background-image:url('{% thumbnail post2.image 100x100  %}');min-height:100px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ post2.id }}{background-image:url('{% thumbnail post2.image 100x100  %}');}}.c5-post-{{ post2.id }}{min-width: 100px;}</style></div></div><div class="content "><h3 class=""><a href="{{ post2.get_absolute_url }}">{{ post2.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post2.created }}"><span class="fa fa-calendar-o"></span>{{ post2.created }}</time></li></ul><div class="clearfix"></div></div>
+        </article>
+    </div>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        {% for post3 in middle_widget3 %}
+        <div class="col-sm-6">
+            <article class="c5ab_post_thumb c5ab_posts_thumb_single category-4 has-thumb clearfix"><div class="c5-thumb-hover clearfix"><div class="hover"><div class="half"><a href="{{ post3.get_absolute_url }}" class="fa fa-link"></a></div></div><div class="c5-post-{{ post3.id }} c5-post-thumb"><style>.c5-post-{{ post3.id }}{background-image:url(' {% thumbnail post3.image 100x100  %} ');min-height:100px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ post3.id }}{background-image:url('{% thumbnail post3.image 100x100  %}');}}.c5-post-{{ post3.id }}{min-width: 100px;}</style></div></div><div class="content "><h3 class=""><a href="{{ post3.get_absolute_url }}">{{ post3.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post3.created }}"><span class="fa fa-calendar-o"></span>{{ post3.created }}</time></li></ul><div class="clearfix"></div></div>
+            </article>
+            </div>
+        {% endfor %}
+</div>
+    <div class="row">
+        {% for post3 in middle_widget4 %}
+        <div class="col-sm-6">
+        <article class="c5ab_post_thumb c5ab_posts_thumb_single category-4 has-thumb clearfix">
+            <div class="c5-thumb-hover clearfix">
+                <div class="hover"><div class="half"><a href="{{ post3.get_absolute_url }}" class="fa fa-link"></a></div></div>
+                <div class="c5-post-{{ post3.id }} c5-post-thumb"><style>.c5-post-{{ post3.id }}{background-image:url('{% thumbnail post3.image 100x100  %}');min-height:100px;} @media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { .c5-post-{{ post3.id }}{background-image:url('{% thumbnail post3.image 100x100  %}');}}.c5-post-{{ post3.id }}{min-width: 100px;}</style></div></div><div class="content "><h3 class=""><a href="{{ post3.get_absolute_url }}">{{ post3.title }}</a></h3><ul class="c5_meta_data  clearfix"><li class="c5-meta-li-time clearfix"><time class="value updated" datetime="{{ post3.created }}"><span class="fa fa-calendar-o"></span>{{ post3.created }}</time></li></ul><div class="clearfix"></div></div>
+        </article>
+    </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+

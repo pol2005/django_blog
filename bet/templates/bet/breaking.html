@@ -1,0 +1,4 @@
+{% for post in breaking_news %}
+    <li>
+        <a class="c5-cat" href="{{ post.get_absolute_url }}"  style="color:#e53935;" ><span class="fa fa-star"></span>{{ post.title }}</a></li>
+{% endfor %}
