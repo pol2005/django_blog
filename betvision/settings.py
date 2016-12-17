@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+4vdf_af_@+p+^8sxst0ecy#mox^^%vs_ie_d)5*wk$6k5782g'
+SECRET_KEY = 'the_secret_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-	'django.contrib.sitemaps',
+    'django.contrib.sitemaps',
     'taggit',
     'ckeditor',
     'taggit_labels',
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
-	'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -181,8 +181,8 @@ STATICFILES_DIRS = (
 )
 STATIC_ROOT = '/home/django/betvision/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
-RECAPTCHA_PUBLIC_KEY = '6Lc8zSUTAAAAAO_ZaWFUqZVEtC92sUei4au0txds'
-RECAPTCHA_PRIVATE_KEY = '6Lc8zSUTAAAAAEA6v8CgECm2Bea50WqDLWNBUeKK'
+RECAPTCHA_PUBLIC_KEY = 'key'
+RECAPTCHA_PRIVATE_KEY = 'private_key'
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_CONFIGS = {
     'default': {
@@ -193,10 +193,10 @@ CKEDITOR_CONFIGS = {
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'betvisionsports@gmail.com'
-EMAIL_HOST_PASSWORD = 'nmdviutnmqndvual'
+EMAIL_HOST_USER = 'email'
+EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1245509695500648' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'b19be20d08da9a25f1f64c3418547a63' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = 'App_ID' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'app_secret' # Facebook App Secret
